@@ -52,6 +52,22 @@ def get_word(samples):
 
   return random_word, morse_code
 
+def print_statistics(answers):
+
+    """
+    Формула подсчета результатов содержания листа answers
+    """
+
+    right_answers = sum(answers)
+    wrong_answers = len(answers) - right_answers
+
+    """
+    Вывод результатов
+    """
+    print("\n")
+    print(f"Всего задачек: {len(answers)}")
+    print(f"Отвечено верно: {right_answers}")
+    print(f"Отвечено неверно: {wrong_answers}")
 
 samples = ['code', 'bit', 'list', 'soul', 'next']
 
@@ -83,18 +99,4 @@ while len(answers) < 5:
         counter += 1
 
 
-"""
-Формула подсчета результатов содержания листа answers
-"""
-
-right_answers = sum(answers)
-wrong_answers = len(answers) - right_answers
-
-
-"""
-Вывод результатов
-"""
-print("\n")
-print(f"Всего задачек: {len(answers)}")
-print(f"Отвечено верно: {right_answers}")
-print(f"Отвечено неверно: {wrong_answers}")
+print_statistics(answers)
